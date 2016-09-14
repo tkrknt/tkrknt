@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="jp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>勤怠管理システム</title>
+<link rel="stylesheet" href="/css/common.css"></link>
+
+<script src="/js/jsLib/jquery-1.9.1.min.js"></script>
+<script src="/js/jsLib/angular-1.3.15.min.js"></script>
+<script src="/js/common.js"></script>
+
+<style>
+/* ログインエラー */
+.loginErr{
+	color:red;
+	font-weight:bold;
+}
+</style>
+
+<script>
+var app = angular.module('app', []);
+app.controller('ctrl', ['$scope','$http',function($scope,$http){
+	/**
+	 * 初期処理
+	 */
+	$scope.init = function(){
+		$scope.name="restテスト";
+	}
+	
+	$scope.send = function(){
+		var url ="/tkrknt/test";
+		var data = {};
+		data.mailAddress = $scope.name;
+		json(url,data,function(data){
+			// 成功
+			console.log("成功");
+			console.log(data);
+		},function(XMLHttpRequest,textStatus,errorThrown){
+			// 例外
+			console.log("例外");
+			console.log(XMLHttpRequest);
+			console.log(textStatus);
+			console.log(errorThrown);
+		});
+		
+		
+
+	}
+
+}]);
+</script>
+</head>
+<body>
+
+<div style="margin-top:100px;">
+		<span class="loginErr" th:text="${loginForm.errorMsg}"></span><br/>
+		<form action="/tkrknt/login" method="post">
+			メールアドレス<br/>
+		 	<input type="text" name="mailAddress" th:value="${loginForm.mailAddress}" autocomplete="off"/><br/>
+		 	パスワード<br/>
+		 	<input type="password" name="password" th:value="${loginForm.password}" autocomplete="off"/><br/><br/>
+		 	<input type="submit" value="ログイン"/>
+		</form>
+</div>	
+
+
+<!-- ここからAngularJS -->
+<script>
+
+</script>
+<div style="margin-top:200px;">
+	<div id="ctrl" ng-controller="ctrl" ng-init="init()">
+		<div>{{name}}</div>
+		<form>
+			<input ng-model="name" type="text" /><br/>
+			<button ng-click="send()">送信</button>
+		</form>
+	</div>
+</div>
+
+
+	
+</body>
+</html>
