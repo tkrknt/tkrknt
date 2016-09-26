@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package jp.co.tkr.webwg.tkrknt.domain.employee;
 
@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 /**
  * 所属エンティティー
- * 
+ *
  * @author hamakawa
  *
  */
@@ -25,6 +25,17 @@ import javax.persistence.Table;
 @Entity
 public class Department implements Serializable {
 	private static final long serialVersionUID = -4931159161758263359L;
+
+	@OneToMany(mappedBy="employeeInfoId")
+	private EmployeeInfo employeeInfo;
+
+	public EmployeeInfo getEmployeeInfo() {
+		return employeeInfo;
+	}
+
+	public void setEmployeeInfo(EmployeeInfo employeeInfo) {
+		this.employeeInfo = employeeInfo;
+	}
 
 	/** 所属情報ID */
 	@Id

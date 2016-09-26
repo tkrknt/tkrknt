@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -22,6 +24,39 @@ import javax.persistence.Table;
 @Table(name = "employee_info")
 @Entity
 public class EmployeeInfo implements Serializable {
+
+	@ManyToOne
+	private Department department;
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+	@OneToOne
+	private ApplicationInfoDetails applicationInfoDetails;
+
+	public ApplicationInfoDetails getApplicationInfoDetails() {
+		return applicationInfoDetails;
+	}
+
+	public void setApplicationInfoDetails(ApplicationInfoDetails applicationInfoDetails) {
+		this.applicationInfoDetails = applicationInfoDetails;
+	}
+
+	@OneToOne
+	private ApplicationInfo applicationInfo;
+
+	public ApplicationInfo getApplicationInfo() {
+		return applicationInfo;
+	}
+
+	public void setApplicationInfo(ApplicationInfo applicationInfo) {
+		this.applicationInfo = applicationInfo;
+	}
 
 	/**社員情報ID*/
 	@Id

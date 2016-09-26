@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -22,6 +24,28 @@ import javax.persistence.Table;
 @Table(name = "Application_info_details")
 @Entity
 public class ApplicationInfoDetails implements Serializable {
+
+	@OneToOne
+	private EmployeeInfo employeeInfo;
+
+	public EmployeeInfo getEmployeeInfo() {
+		return employeeInfo;
+	}
+
+	public void setEmployeeInfo(EmployeeInfo employeeInfo) {
+		this.employeeInfo = employeeInfo;
+	}
+
+	@ManyToOne
+	private ApplicationInfo applicationInfo;
+
+	public ApplicationInfo getApplicationInfo() {
+		return applicationInfo;
+	}
+
+	public void setApplicationInfo(ApplicationInfo applicationInfo) {
+		this.applicationInfo = applicationInfo;
+	}
 
 	/**申請情報詳細ID*/
 	@Id

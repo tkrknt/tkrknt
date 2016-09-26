@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -21,7 +22,18 @@ import javax.persistence.Table;
  */
 @Table(name = "work_report_wetails")
 @Entity
-public class WorkReportWetails implements Serializable {
+public class WorkReportDetails implements Serializable {
+
+	public WorkReport getWorkReport() {
+		return workReport;
+	}
+
+	public void setWorkReport(WorkReport workReport) {
+		this.workReport = workReport;
+	}
+
+	@ManyToOne
+	private WorkReport workReport;
 
 	/**勤務報告書詳細ID*/
 	@Id
