@@ -1,0 +1,71 @@
+html,body{
+	height:100%;
+	maring:0px;
+	padding:0px;
+  font-family:Meiryo, Tahoma, Verdana, Arial, sans-serif;
+}
+div#wrapper {  
+    width: 1000px;  
+    margin: 0 auto;  
+    text-align: left;  
+}  
+table {
+
+width: 100%;
+margin-bottom: 20px;
+border: 1px #ddd solid;
+ margin-right : auto;
+ margin-left : auto;
+ text-align: center;
+ color: #555;
+}
+td, th {
+border: 1px #ddd solid;
+}
+.header{border-radius: 9px;
+background-image: -moz-linear-gradient(top, #ffffff, #b6c4c4);
+background-image: -ms-linear-gradient(top, #ffffff, #b6c4c4);
+background-image: -webkit-linear-gradient(top, #ffffff, #b6c4c4);
+background-image: linear-gradient(top, #ffffff, #b6c4c4);
+/*--IE9 DOES NOT SUPPORT CSS3 GRADIENT BACKGROUNDS--*/
+
+
+}
+.sat{
+	color: #386CFF;
+}
+.sun{
+	color: #DD5E5E;
+} 
+
+.gray {
+ background-color:#062C4A;
+ color: #FFFFFF;
+ font-size: 12pt;
+}
+ 
+.gray ul {
+ width:1000px;
+ margin:0 auto;
+}
+
+ 
+.navi ul {
+ height:70px;
+ text-align:left;
+}
+ 
+.navi li {
+ display:inline-block;
+ padding:0 10px;
+}
+.total th{
+	 background-color:#062C4A;
+ color: #FFFFFF;
+}
+.icon img{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding-top: 5px;
+}
