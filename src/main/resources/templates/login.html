@@ -26,7 +26,7 @@ app.controller('ctrl', ['$scope','$http',function($scope,$http){
 	$scope.init = function(){
 		$scope.name="restテスト";
 	}
-	
+
 	$scope.send = function(){
 		var url ="/tkrknt/test";
 		var data = {};
@@ -42,8 +42,12 @@ app.controller('ctrl', ['$scope','$http',function($scope,$http){
 			console.log(textStatus);
 			console.log(errorThrown);
 		});
-		
-		
+
+
+
+
+
+
 
 	}
 
@@ -61,7 +65,7 @@ app.controller('ctrl', ['$scope','$http',function($scope,$http){
 		 	<input type="password" name="password" th:value="${loginForm.password}" autocomplete="off"/><br/><br/>
 		 	<input type="submit" value="ログイン"/>
 		</form>
-</div>	
+</div>
 
 
 <!-- ここからAngularJS -->
@@ -79,6 +83,6 @@ app.controller('ctrl', ['$scope','$http',function($scope,$http){
 </div>
 
 
-	
+
 </body>
 </html>
